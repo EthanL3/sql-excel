@@ -1,0 +1,34 @@
+2025-04-01 18:17:53.142219 - Traceback (most recent call last):
+  File "/Users/ethanlevine/Desktop/EC530/sql-excel/main.py", line 105, in interactive_sqlite_bot
+    df = pd.read_csv(file_path)
+  File "/Users/ethanlevine/Desktop/EC530/sql-excel/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/ethanlevine/Desktop/EC530/sql-excel/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/Users/ethanlevine/Desktop/EC530/sql-excel/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/Users/ethanlevine/Desktop/EC530/sql-excel/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1898, in _make_engine
+    return mapping[engine](f, **self.options)
+  File "/Users/ethanlevine/Desktop/EC530/sql-excel/venv/lib/python3.10/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 93, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "parsers.pyx", line 581, in pandas._libs.parsers.TextReader.__cinit__
+pandas.errors.EmptyDataError: No columns to parse from file
+
+2025-04-01 18:21:39.079154 - Traceback (most recent call last):
+  File "/Users/ethanlevine/Desktop/EC530/sql-excel/main.py", line 141, in interactive_sqlite_bot
+    llm_output = generate_sql_with_llm(schema_description, user_prompt)
+  File "/Users/ethanlevine/Desktop/EC530/sql-excel/main.py", line 29, in generate_sql_with_llm
+    response = openai.ChatCompletion.create(
+  File "/Users/ethanlevine/Desktop/EC530/sql-excel/venv/lib/python3.10/site-packages/openai/lib/_old_api.py", line 39, in __call__
+    raise APIRemovedInV1(symbol=self._symbol)
+openai.lib._old_api.APIRemovedInV1: 
+
+You tried to access openai.ChatCompletion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+
